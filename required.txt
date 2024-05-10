@@ -1,0 +1,2 @@
+OpenCV module
+>>pip install opencv-python
