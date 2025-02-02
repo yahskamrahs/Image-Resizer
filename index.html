@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="header">
+        <h1>Image Resizer</h1>
+        <ul class="nav-links">
+            
+            
+                <li><a href="https://yahska-amrahs.vercel.app/" target="_blank">About Me</a></li>
+           
+        </ul>
+    </div>
+
+
+    <div class="container text-center">
+        <h2 class="mb-4">Image Resizer</h2>
+        <div class="upload-box" id="uploadBox" 
+            onclick="document.getElementById('imageInput').click();" 
+            ondragover="handleDragOver(event)" 
+            ondrop="handleDrop(event)">
+            <img src="assets/upload.svg" alt="Upload">
+            <br>
+            <p>Click or Drag & Drop to Upload Image</p>
+            <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="previewImage()" />
+        </div>
+
+        <div class="preview mt-3" id="preview">
+            <img id="previewImage" src="" alt="Image Preview" class="img-fluid rounded" />
+            <p id="previewDimensions" class="mt-2"></p>
+            <p id="previewSize"></p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="inputs" id="inputs">
+            <div class="input-group">
+                <label>Width:</label>
+                <input type="number" id="width" placeholder="Auto" />
+            </div>
+            <div class="spacer"></div>
+            <div class="input-group">
+                <label>Height:</label>
+                <input type="number" id="height" placeholder="Auto" />
+            </div>
+            <div class="spacer"></div>
+            <div class="input-group">
+                <label>Resolution (DPI):</label>
+                <input type="number" id="dpi" placeholder="72" />
+            </div>
+            <div class="spacer"></div>
+            <div class="input-group">
+                <label>Expected Size (KB):</label>
+                <input type="number" id="expectedSize" placeholder="Optional" />
+            </div>
+            <div class="spacer"></div>
+            <div class="input-group">
+                <div class="input-group">
+                    <label>Format:</label>
+                </div>
+                <select id="format">
+                    <option value="jpeg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WEBP</option>
+                </select>
+                <div class="input-group">
+                    <label>Quality (%):</label>
+                </div>
+                <input type="number" id="quality" min="1" max="100" placeholder="80" />
+            </div>
+            <button class="btn-primary" onclick="resizeImage()">Resize</button>
+        </div>
+        <div class="spacer"></div>
+        <div class="loader" id="loader"></div>
+        <div class="output mt-4" id="output">
+            <h2>Resized Image</h2>
+            <img id="resizedImage" src="" alt="Resized Image" class="img-fluid rounded" />
+            <p id="dimensions" class="mt-2"></p>
+            <p id="size"></p>
+            <a id="download" class="btn btn-success mt-2" download>Download Resized Image</a>
+        </div>
+    </div>
+    <script>
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = "copy";
+        }
+        
+        function handleDrop(event) {
+            event.preventDefault();
+            let files = event.dataTransfer.files;
+            if (files.length > 0) {
+                document.getElementById("imageInput").files = files;
+                previewImage();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
