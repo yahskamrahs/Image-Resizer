@@ -19,7 +19,7 @@
 
 | Upload & Configure | Resized Output |
 |---|---|
-| ![Upload Screen](Asset/upload.png) | ![Output Screen](Assets/output.png) |
+| ![Upload Screen](assets/upload.png) | ![Output Screen](assets/output.png) |
 
 ---
 
