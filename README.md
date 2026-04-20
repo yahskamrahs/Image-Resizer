@@ -133,7 +133,7 @@ This project is open source. See the [LICENSE](LICENSE) file for details.
 
 **Yahska Mrahs**
 
-- 🌐 Portfolio: [yahska-amrahs.vercel.app](https://yahska-amrahs.vercel.app/)
+- 🌐 Portfolio: [akshaykumarsharma.in](https://akshaykumarsharma.in)
 - 🐙 GitHub: [@yahskamrahs](https://github.com/yahskamrahs)
 
 ---
